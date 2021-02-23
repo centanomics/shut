@@ -18,12 +18,23 @@ const client = new Discord.Client();
 
 client.login(process.env.DISCORD_BOT_TOKEN);
 
+const usedCommandRecently = new Set();
+
 client.on('ready', () => {
   console.log('Bot is ready!')
 })
 
 client.on('message', (message) => {
-  if (message.author.id === process.env.ADAN_ID && message.content.toLowerCase().indexOf('gay') !== -1) {
-    message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/813584521500164136/unknown.png')
+  if (usedCommandRecently.has(message.author.id)) {
+    
+  } else {
+    if (message.author.id === process.env.ADAN_ID && message.content.toLowerCase().indexOf('gay') !== -1) {
+      message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/813584521500164136/unknown.png')
+    }
+    usedCommandRecently.add(message.author.id);
+    setTimeout(() => {
+      usedCommandRecently.delete(message.author.id);
+    }, 60000) // 60 seconds
   }
+  
 })
