@@ -29,12 +29,18 @@ client.on('message', (message) => {
     
   } else {
     if (message.author.id === process.env.ADAN_ID && message.content.toLowerCase().indexOf('gay') !== -1) {
-      message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/813584521500164136/unknown.png')
-    }
-    usedCommandRecently.add(message.author.id);
+      message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/813584521500164136/unknown.png');
+      usedCommandRecently.add(message.author.id);
     setTimeout(() => {
       usedCommandRecently.delete(message.author.id);
     }, 60000) // 60 seconds
+    } else if(message.author.id === process.env.JUSTIN_ID && message.content.toLowerCase().indexOf('racist') !== -1) {
+      message.channel.send('https://cdn.discordapp.com/attachments/759952933356961865/848986930531926086/justin.png')
+      usedCommandRecently.add(message.author.id);
+    setTimeout(() => {
+      usedCommandRecently.delete(message.author.id);
+    }, 60000) // 60 seconds
+    }
   }
   
 })
