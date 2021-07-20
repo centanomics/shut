@@ -40,6 +40,12 @@ client.on('message', (message) => {
     setTimeout(() => {
       usedCommandRecently.delete(message.author.id);
     }, 60000) // 60 seconds
+    } else if(message.author.id === process.env.ANDREW_ID && message.content.toLowerCase().indexOf('black') !== -1) {
+      message.channel.send('https://cdn.discordapp.com/attachments/853997203525074964/867078481522196520/image0.png')
+      usedCommandRecently.add(message.author.id);
+    setTimeout(() => {
+      usedCommandRecently.delete(message.author.id);
+    }, 60000) // 60 seconds
     }
   }
   
