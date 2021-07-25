@@ -46,6 +46,12 @@ client.on('message', (message) => {
     setTimeout(() => {
       usedCommandRecently.delete(message.author.id);
     }, 60000) // 60 seconds
+    } else if(message.author.id === process.env.ADAM_ID && message.content.toLowerCase().indexOf('milf') !== -1) {
+      message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/868910486228459563/video0.mov')
+      usedCommandRecently.add(message.author.id);
+    setTimeout(() => {
+      usedCommandRecently.delete(message.author.id);
+    }, 60000) // 60 seconds
     }
   }
   
