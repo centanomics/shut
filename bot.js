@@ -26,33 +26,33 @@ client.on('ready', () => {
 
 client.on('message', (message) => {
   if (usedCommandRecently.has(message.author.id)) {
-    
+
   } else {
     if (message.author.id === process.env.ADAN_ID && message.content.toLowerCase().indexOf('gay') !== -1) {
       message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/813584521500164136/unknown.png');
       usedCommandRecently.add(message.author.id);
-    setTimeout(() => {
-      usedCommandRecently.delete(message.author.id);
-    }, 60000) // 60 seconds
-    } else if(message.author.id === process.env.JUSTIN_ID && message.content.toLowerCase().indexOf('racist') !== -1) {
+      setTimeout(() => {
+        usedCommandRecently.delete(message.author.id);
+      }, 60000) // 60 seconds
+    } else if (message.author.id === process.env.JUSTIN_ID && message.content.toLowerCase().indexOf('racist') !== -1) {
       message.channel.send('https://cdn.discordapp.com/attachments/759952933356961865/848986930531926086/justin.png')
       usedCommandRecently.add(message.author.id);
-    setTimeout(() => {
-      usedCommandRecently.delete(message.author.id);
-    }, 60000) // 60 seconds
-    } else if(message.author.id === process.env.ANDREW_ID && message.content.toLowerCase().indexOf('black') !== -1) {
-      message.channel.send('https://cdn.discordapp.com/attachments/853997203525074964/867078481522196520/image0.png')
+      setTimeout(() => {
+        usedCommandRecently.delete(message.author.id);
+      }, 60000) // 60 seconds
+    } else if (message.author.id === process.env.ANDREW_ID && message.content.toLowerCase().indexOf('black') !== -1) {
+      message.channel.send('https://cdn.discordapp.com/attachments/884901944894844928/1006045147924013066/andrew.exe_copy.jpg')
       usedCommandRecently.add(message.author.id);
-    setTimeout(() => {
-      usedCommandRecently.delete(message.author.id);
-    }, 60000) // 60 seconds
-    } else if(message.author.id === process.env.ADAM_ID && message.content.toLowerCase().indexOf('milf') !== -1) {
+      setTimeout(() => {
+        usedCommandRecently.delete(message.author.id);
+      }, 60000) // 60 seconds
+    } else if (message.author.id === process.env.ADAM_ID && message.content.toLowerCase().indexOf('milf') !== -1) {
       message.channel.send('https://cdn.discordapp.com/attachments/546172628738768911/868910486228459563/video0.mov')
       usedCommandRecently.add(message.author.id);
-    setTimeout(() => {
-      usedCommandRecently.delete(message.author.id);
-    }, 60000) // 60 seconds
+      setTimeout(() => {
+        usedCommandRecently.delete(message.author.id);
+      }, 60000) // 60 seconds
     }
   }
-  
+
 })
